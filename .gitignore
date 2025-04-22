@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment
+.env
+*.env
+
+# Intermediate/large data files
+*.pkl
+*.index
+*.json
+
+# Project-specific folders/files to ignore
+evaluation_results/
+working/
+flas1/
+hotpot_data/
+retriever/doc_texts.json
+retriever/faiss_index.index
+generated_predictions.json
+
+# IDE-specific
+.vscode/
