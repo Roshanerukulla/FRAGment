@@ -1,4 +1,4 @@
-# 🧠 FRAGment: A Refined FlashRAG Pipeline for Multi-hop Question Answering
+#  FRAGment: A Refined FlashRAG Pipeline for Multi-hop Question Answering
 
 FRAGment is an enhanced version of the FlashRAG pipeline for multi-hop QA. It improves document retrieval, reranking, and generation using semantic techniques and modular upgrades. Built with FAISS, Cohere, and a subset of HotpotQA.
 
