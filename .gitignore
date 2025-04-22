@@ -13,7 +13,7 @@ __pycache__/
 
 # Project-specific folders/files to ignore
 evaluation_results/
-working/
+
 flas1/
 hotpot_data/
 retriever/doc_texts.json
