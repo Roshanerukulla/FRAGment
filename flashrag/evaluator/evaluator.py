@@ -3,7 +3,7 @@ from flashrag.evaluator.metrics import BaseMetric
 
 
 class Evaluator:
-    """Evaluator is used to summarize the results of all metrics."""
+
 
     def __init__(self, config):
         self.config = config

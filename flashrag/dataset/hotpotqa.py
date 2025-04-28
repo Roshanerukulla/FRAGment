@@ -19,7 +19,7 @@ class HotpotQADataset(Dataset):
         question = item["question"]
         context = item["context"]
 
-        # Split the context string into "docs" based on your chunking strategy
+       
         if self.chunk_by == "sentence":
             docs = [sent.strip() for sent in context.split(". ") if sent.strip()]
         elif self.chunk_by == "paragraph":

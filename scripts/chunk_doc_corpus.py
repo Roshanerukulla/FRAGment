@@ -1,4 +1,4 @@
-# scripts/chunk_doc_corpus.py (Refactored to use SentenceTransformer tokenizer)
+
 
 import json
 from tqdm import tqdm
@@ -7,12 +7,12 @@ import os
 
 from sentence_transformers import SentenceTransformer
 
-# Use a sentence transformer model for splitting if needed (we'll still do basic splitting here)
+
 def chunk_text(text, chunk_size=3):
-    # Naive sentence splitting using '.', '!', '?' if not using nltk
+   
     sentences = [s.strip() for s in text.replace("\n", " ").split('.') if s.strip()]
 
-    # Combine sentences into chunks
+    
     chunks = []
     for i in range(0, len(sentences), chunk_size):
         chunk = " ".join(sentences[i:i + chunk_size])

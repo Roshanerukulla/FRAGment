@@ -14,7 +14,7 @@ retriever = FaissRetriever(similarity_threshold=0.3)
 reranker = CohereReranker(api_key=os.getenv("COHERE_API_KEY"))
 generator = CohereGenerator(api_key=os.getenv("COHERE_API_KEY"))
 
-# Store last 10 turns of conversation
+# Storing last 10 turns of conversation
 conversation_history = deque(maxlen=10)
 
 def answer_question(query):
@@ -34,21 +34,20 @@ def answer_question(query):
     # Store conversation
     conversation_history.append((query, answer))
 
-    # Prepare debug chunk preview
     debug_chunks = "\n\n".join([
         f"({score:.2f}) {doc['text'][:400]}..." 
         for doc, score in reranked_docs_with_scores[:5] 
         if doc is not None and isinstance(doc, dict) and 'text' in doc
     ])
 
-    # Format conversation history
+    
     history_text = "\n\n".join([
         f" {q}\n {a}" for q, a in conversation_history
     ])
 
     return answer, debug_chunks, history_text
 
-# Launch gradio UI
+
 ui = gr.Interface(
     fn=answer_question,
     inputs=gr.Textbox(lines=2, placeholder="Ask your question here...", label="💬 Query", container=True),
